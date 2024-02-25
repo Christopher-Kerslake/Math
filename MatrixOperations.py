@@ -17,16 +17,24 @@
 #!/usr/bin/python3
 def create_matrix ():
 	matrix = [[1, 2, 3, 4],[2, 4, 6, 8]]
-	matrix_operation_test(matrix)
+	matrix_add(matrix, 1, 0)
+	print(matrix)
+	matrix_sub(matrix, 0, 1)
 	print(matrix)
 	print(type(matrix))
 
-def matrix_operation_test(matrix):
-	x = 0
-	for a in matrix:
-		y = 0
-		for b in matrix[x]:
-			print(matrix[x][y])
-			y = y + 1
-		x = x + 1
+
+#This function is used to add row n to row m within the given matrix
+def matrix_add(matrix, n, m):
+	a = 0
+	for x in matrix[n]:
+		matrix[m][a] = matrix[m][a] + matrix[n][a]
+		a = a + 1
+
+def matrix_sub(matrix, n, m):
+	a = 0
+	for x in matrix[n]:
+		matrix[m][a] = matrix[m][a] - matrix[n][a]
+		a = a + 1
+
 create_matrix()
